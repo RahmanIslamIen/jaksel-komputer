@@ -36,12 +36,16 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/data-transaksi', [App\Http\Controllers\TransaksiController::class, 'index']);
 Route::get('/riwayat-transaksi', [App\Http\Controllers\TransaksiController::class, 'riwayatTransaksi']);
 Route::get('tambah-transaksi/{id}', [App\Http\Controllers\TransaksiController::class, 'masukTransaksi']);
-Route::post('tambah-transaksi/', [App\Http\Controllers\TransaksiController::class, 'buatTransaksi']);
+Route::post('tambah-transaksi/{id}', [App\Http\Controllers\TransaksiController::class, 'buatTransaksi',"TransaksiController@perbaharuiStok",'TransaksiController@ambilSaldo']);
+Route::post('tambah-transaksi/{id}', [App\Http\Controllers\TransaksiController::class, 'perbaharuiStok']);
+Route::post('tambah-transaksi/{id}', [App\Http\Controllers\TransaksiController::class, 'ambilSaldo']);
 
 //ubah profi data diri akun
 Route::get('tampil-profil/', [App\Http\Controllers\profilController::class, 'profil']);
 Route::get('mengubah-profil/', [App\Http\Controllers\profilController::class, 'mengubahProfil']);
 Route::put('update-profil/{id}', [App\Http\Controllers\profilController::class, 'updateProfil']);
+Route::get('top-up-saldo/', [App\Http\Controllers\profilController::class, 'topUp']);
+Route::put('isi-saldo/', [App\Http\Controllers\profilController::class, 'isiSaldo']);
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

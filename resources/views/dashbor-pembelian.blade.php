@@ -17,7 +17,7 @@
                             height="259">
                         <div class="card-body">
                             <h5 class="card-title">{{ $item->nama_produk }}</h5>
-                            <h3 class="card-text">Rp.{{ $item->harga }}</h3>
+                            <h3 class="card-text">@currency($item->harga)</h3>
                             @if (Auth::user()->saldo < $item->harga)
                                 <span class="badge text-bg-danger">saldo anda kurang</span>
                             @endif

@@ -23,8 +23,8 @@
                         <td>{{ $item->email }}</td>
                         <td>{{ $item->nama_produk }}</td>
                         <td>{{ $item->jumlah_beli }}</td>
-                        <td>{{ $item->harga }}</td>
-                        <td>{{ $item->total_harga }}</td>
+                        <td>@currency($item->harga)</td>
+                        <td>@currency($item->total_harga)</td>
                     </tr>
                 @endforeach
             </tbody>

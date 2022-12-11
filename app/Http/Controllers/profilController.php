@@ -31,4 +31,21 @@ class profilController extends Controller
         return redirect()->back()->with('status','Berhasil mengubah profil !');
     }
 
+    public function topUp(Request $request)
+    {
+        return view('top-up-saldo');
+    }
+
+    public function isiSaldo(Request $request)
+    {
+        $id = Auth::user()->id;
+        $dataProfil = User::find($id);
+        $tambahSaldo = $request->input('tambahSaldo');
+        $saldoSekarang = Auth::user()->saldo;
+        $jumlahSaldo = $saldoSekarang + $tambahSaldo;
+        $dataProfil->saldo = $jumlahSaldo;
+        $dataProfil->update();
+        return redirect()->back()->with('status','Berhasil top up saldo anda di tambahkan !');
+    }
+
 }

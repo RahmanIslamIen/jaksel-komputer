@@ -43,12 +43,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/tampil-profil">Profile</a>
                         </li>
-                        <li class="nav-item">
-                            <u>
-                                <a class="nav-link active text-success" href="/tampil-profil">Rp.
-                                    {{ Auth::user()->saldo }}</a>
-                            </u>
-                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -67,6 +61,9 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item">
+                                <a class="nav-link text-success" href="/tampil-profil"><u>@currency(Auth::user()->saldo)</u></a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
