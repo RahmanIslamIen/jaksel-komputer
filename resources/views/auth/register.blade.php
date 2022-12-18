@@ -64,7 +64,7 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-3" style="visibility: hidden;">
+                            <div class="row mb-3" style="visibility: hidden">
                                 <label for="saldo"
                                     class="col-md-4 col-form-label text-md-end">{{ __('saldo') }}</label>
 
