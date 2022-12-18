@@ -64,14 +64,14 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-3">
+                            <div class="row mb-3" style="visibility: hidden">
                                 <label for="saldo"
                                     class="col-md-4 col-form-label text-md-end">{{ __('saldo') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="saldo" type="number"
                                         class="form-control @error('saldo') is-invalid @enderror" name="saldo"
-                                        value="{{ old('saldo') }}" required autocomplete="saldo" autofocus>
+                                        value="0" required autocomplete="saldo" autofocus>
 
                                     @error('saldo')
                                         <span class="invalid-feedback" role="alert">
